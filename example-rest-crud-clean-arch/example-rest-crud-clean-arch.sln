@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example-rest-crud-clean-arch", "example-rest-crud-clean-arch.csproj", "{EC4329CC-C081-4281-8E9B-6E277E3AC160}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example-rest-crud-clean-arch-tests", "..\example-rest-crud-clean-arch-tests\example-rest-crud-clean-arch-tests.csproj", "{ED209AEA-36CA-4A4D-AE70-1D7F87373AF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EC4329CC-C081-4281-8E9B-6E277E3AC160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC4329CC-C081-4281-8E9B-6E277E3AC160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC4329CC-C081-4281-8E9B-6E277E3AC160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED209AEA-36CA-4A4D-AE70-1D7F87373AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED209AEA-36CA-4A4D-AE70-1D7F87373AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED209AEA-36CA-4A4D-AE70-1D7F87373AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED209AEA-36CA-4A4D-AE70-1D7F87373AF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
