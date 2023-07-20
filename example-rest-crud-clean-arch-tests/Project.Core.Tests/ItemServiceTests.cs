@@ -27,5 +27,22 @@ namespace example_rest_crud_clean_arch_tests.Project.Core.Tests
             Assert.AreEqual(items, result);
 
         }
+
+        [Test]
+        public void GetItemById_ValidId_ShouldReturnItem()
+        {
+            // Arrange
+            var itemId = 1;
+            var item = new Item { Id = itemId, Name = "Item 1", Value = 10 };
+            var mockRepository = new Mock<IItemRepository>();
+            mockRepository.Setup(repo => repo.GetItemById(itemId)).Returns(item);
+            var itemService = new ItemService(mockRepository.Object);
+
+            // Act
+            var result = itemService.GetItemById(itemId);
+
+            // Assert
+            Assert.AreEqual(item, result);
+        }
     }
 }
