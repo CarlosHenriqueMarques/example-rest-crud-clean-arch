@@ -29,6 +29,22 @@ namespace example_rest_crud_clean_arch_tests.Project.Core.Tests
         }
 
         [Test]
+        public void AddItem_ShouldCallAddItemOnRepository()
+        {
+            // Arrange
+            var itemToAdd = new Item { Id = 1, Name = "Test Item" };
+            var itemRepositoryMock = new Mock<IItemRepository>();
+            var itemService = new ItemService(itemRepositoryMock.Object);
+
+            // Act
+            itemService.AddItem(itemToAdd);
+
+            // Assert
+            itemRepositoryMock.Verify(r => r.AddItem(itemToAdd), Times.Once);
+        }
+
+
+        [Test]
         public void GetItemById_ValidId_ShouldReturnItem()
         {
             // Arrange
@@ -43,6 +59,36 @@ namespace example_rest_crud_clean_arch_tests.Project.Core.Tests
 
             // Assert
             Assert.AreEqual(item, result);
+        }
+
+        [Test]
+        public void UpdateItem_ShouldCallUpdateItemOnRepository()
+        {
+            // Arrange
+            var itemToUpdate = new Item { Id = 1, Name = "Updated Item" };
+            var itemRepositoryMock = new Mock<IItemRepository>();
+            var itemService = new ItemService(itemRepositoryMock.Object);
+
+            // Act
+            itemService.UpdateItem(itemToUpdate);
+
+            // Assert
+            itemRepositoryMock.Verify(r => r.UpdateItem(itemToUpdate), Times.Once);
+        }
+
+        [Test]
+        public void DeleteItem_ShouldCallDeleteItemOnRepository()
+        {
+            // Arrange
+            var itemIdToDelete = 1;
+            var itemRepositoryMock = new Mock<IItemRepository>();
+            var itemService = new ItemService(itemRepositoryMock.Object);
+
+            // Act
+            itemService.DeleteItem(itemIdToDelete);
+
+            // Assert
+            itemRepositoryMock.Verify(r => r.DeleteItem(itemIdToDelete), Times.Once);
         }
     }
 }
