@@ -15,7 +15,12 @@ public class ItemRepository : IItemRepository
 
     public void DeleteItem(int id)
     {
-        throw new NotImplementedException();
+        var existItem = _items.FirstOrDefault(i => i.Id == id);
+        if (existItem == null)
+        {
+            throw new InvalidOperationException("Id invalid!");
+        }
+        _items.Remove(existItem);
     }
 
     public IEnumerable<Item> GetAllItems()
